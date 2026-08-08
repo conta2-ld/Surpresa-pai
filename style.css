@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #111827;
+    color: white;
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.tela {
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.instrucao {
+    margin-bottom: 12px;
+    color: #ccc;
+}
+
+
+/* =========================
+   LABIRINTO
+========================= */
+
+#labirinto {
+
+    position: relative;
+
+    width: min(94vw, 700px);
+
+    aspect-ratio: 14 / 13;
+
+    margin: auto;
+
+    background: #d1d5db;
+
+    border: 6px solid #374151;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   PAREDES
+========================= */
+
+.parede {
+
+    position: absolute;
+
+    background: #374151;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   JOGADOR
+========================= */
+
+#jogador {
+
+    position: absolute;
+
+    width: 7.14%;
+
+    aspect-ratio: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: clamp(20px, 5vw, 32px);
+
+    z-index: 5;
+
+    transition:
+        left 0.06s,
+        top 0.06s;
+}
+
+
+/* =========================
+   PORTAL
+========================= */
+
+#portal {
+
+    position: absolute;
+
+    width: 7.14%;
+
+    aspect-ratio: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: clamp(25px, 6vw, 42px);
+
+    z-index: 10;
+
+    animation: portal 0.8s infinite alternate;
+}
+
+@keyframes portal {
+
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================
+   CONTROLES
+========================= */
+
+#controles {
+    margin-top: 10px;
+}
+
+#controles button {
+
+    width: 60px;
+    height: 50px;
+
+    margin: 3px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #374151;
+
+    color: white;
+
+    font-size: 24px;
+
+    touch-action: manipulation;
+}
+
+#controles button:active {
+    transform: scale(0.9);
+}
+
+
+/* =========================
+   REINICIAR
+========================= */
+
+#reiniciar {
+
+    margin-top: 5px;
+
+    padding: 9px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   TELA FINAL
+========================= */
+
+#final {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+}
+
+.caixa-final {
+
+    width: 90%;
+    max-width: 500px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #1f2937;
+
+    border: 3px solid white;
+
+    border-radius: 20px;
+}
+
+.presente {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.caixa-final h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.caixa-final p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.caixa-final button {
+
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   TV / COMPUTADOR
+========================= */
+
+@media (min-width: 800px) {
+
+    #controles {
+        display: none;
+    }
+}

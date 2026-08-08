@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Labirinto - Dia dos Pais</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="tela">
+
+        <h1>🧩 Labirinto</h1>
+
+        <p class="instrucao">
+            Chegue até o portal 🌀
+        </p>
+
+        <!-- LABIRINTO -->
+        <div id="labirinto">
+
+            <!-- JOGADOR -->
+            <div id="jogador">🙂</div>
+
+            <!-- PORTAL -->
+            <div id="portal">🌀</div>
+
+        </div>
+
+
+        <!-- CONTROLES DO CELULAR -->
+
+        <div id="controles">
+
+            <button onclick="mover(0, -1)">⬆️</button>
+
+            <div>
+                <button onclick="mover(-1, 0)">⬅️</button>
+
+                <button onclick="mover(0, 1)">⬇️</button>
+
+                <button onclick="mover(1, 0)">➡️</button>
+            </div>
+
+        </div>
+
+
+        <button id="reiniciar"
+                onclick="reiniciar()">
+
+            🔄 Reiniciar
+
+        </button>
+
+    </div>
+
+
+    <!-- TELA FINAL -->
+
+    <div id="final">
+
+        <div class="caixa-final">
+
+            <div class="presente">
+                🎁
+            </div>
+
+            <h1>
+                Feliz Dia dos Pais! ❤️
+            </h1>
+
+            <p>
+                Espere pelas suas surpresas!
+            </p>
+
+            <button onclick="reiniciar()">
+                Jogar novamente
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
